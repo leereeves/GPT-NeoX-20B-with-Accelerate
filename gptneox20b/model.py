@@ -24,6 +24,12 @@ class NeoX20BModel(nn.Module):
             bias=False,
             device=device,
         )
+        # next lines are a workaround for an Accelerate bug: 
+        # AttributeError: 'Parameter' object has no attribute 'named_children'
+        self.embed_in.weight.named_children = lambda: [] 
+        self.final_layer_norm.weight.named_children = lambda: [] 
+        self.final_layer_norm.bias.named_children = lambda: [] 
+        self.logits_out.weight.named_children = lambda: [] 
 
     def forward(self, x, attention_mask=None, layer_past=None):
         if attention_mask is None:
@@ -42,6 +48,8 @@ class NeoX20BModel(nn.Module):
         hidden_states = self.pre_transformer_transpose(hidden_states)
 
         for layer_i, layer in enumerate(self.layer_list):
+            #print(f'layer_list.{layer_i:d}.forward()')
+            #print(torch.cuda.memory_allocated(0))
             hidden_states, kv_cache = layer(
                 x=hidden_states,
                 attention_mask=attention_mask,

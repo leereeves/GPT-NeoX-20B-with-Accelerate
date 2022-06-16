@@ -2,7 +2,7 @@ import gptneox20b
 import torch
 model = gptneox20b.create_model(
     "./20B_checkpoints/global_step150000",
-    use_cache=False,
+    use_cache=True,
     device="cuda:0",
 )
 tokenizer = gptneox20b.create_tokenizer(

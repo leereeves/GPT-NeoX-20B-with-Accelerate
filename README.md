@@ -1,13 +1,12 @@
 # GPT-NeoX-20B with Hugging Face Accelerate
 
-An exeriment, using Hugging Face's Accelerate library to run inference with Eleuther's GPT-NeoX-20B on a system without enough GPU or CPU RAM to hold 20 billion parameters.
+An exeriment, using Hugging Face's [Accelerate](https://huggingface.co/docs/accelerate/big_modeling) library to run inference with Eleuther's [GPT-NeoX](https://github.com/EleutherAI/gpt-neox) 20B model on a system without enough GPU or CPU RAM to hold 20 billion parameters.
 
 It works, but is very slow: 30 minutes to predict 100 tokens.
 
 ## About GPT-NeoX-20B
 
 GPT-NeoX-20B is a 20 billion parameter autoregressive language model developed by [EleutherAI](https://www.eleuther.ai/) with the support of [CoreWeave](https://www.coreweave.com/) and trained on [the Pile](https://arxiv.org/abs/2101.00027). Technical details about GPT-NeoX-20B can be found in [the associated paper](https://arxiv.org/abs/2204.06745). 
-
 
 ### The Weights
 

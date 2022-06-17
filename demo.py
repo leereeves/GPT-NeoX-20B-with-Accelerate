@@ -13,7 +13,7 @@ with torch.inference_mode():
         model, tokenizer,
         #"GPTNeoX20B is a 20B-parameter autoregressive Transformer model developed by EleutherAI.",
         "How do you feel?",
-        max_seq_len=20,
+        max_seq_len=100,
     )
 
 print(text)

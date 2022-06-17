@@ -51,7 +51,7 @@ def create_model(checkpoint_path, use_cache=False, device=torch.device("cuda:0")
         # model = model.half().to_empty(device=device)
 
     no_split_module_classes = ['TransformerLayer']
-    max_memory = {'cuda:0': 18*(2**30), 'cpu': 38*(2**30) }
+    max_memory = {'cuda:0': 19*(2**30), 'cpu': 38*(2**30) }
     full_model_device_map = accelerate.infer_auto_device_map(
         model=model,
         max_memory=max_memory,

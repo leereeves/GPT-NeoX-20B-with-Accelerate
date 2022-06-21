@@ -12,7 +12,7 @@ For now, the experiment is on hold; I find it too limited to be worth further de
 
 The Accelerate library can offload PyTorch modules (layers of the network) from the GPU VRAM to CPU memory or to a disk, then reload them on the GPU when needed. After loading a model with Accelerate, the model can be used without changes, even if it is too big to fit in GPU VRAM.
 
-This project preprocesses the weights provided by Eleuther and stores them in <install folder>/cache in a format compatible with Accelerate. 
+This project preprocesses the weights provided by Eleuther and stores them in `<install folder>/cache` in a format compatible with Accelerate. 
 
 ## About GPT-NeoX-20B
 
@@ -30,7 +30,7 @@ Then install other required Python libraries with pip:
 pip install -r requirements.txt
 ```
 
-Finally, download the network weights from Eleuther and place them in <install folder>/20B_checkpoints
+Finally, download the network weights from Eleuther and place them in `<install folder>/20B_checkpoints`
 
 ### The Weights
 
